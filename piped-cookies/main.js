@@ -9,16 +9,6 @@ function pcInit() {
 function clickme()
 {
 	console.log("Click log!");
-	/*Game.ShowMenu();
-	if (window.autoClick == true) {
-		PipedCookies.logButton.innerHTML="Autoclick off";
-		window.autoClick = false;
-		clearInterval(window.clickInterval);
-	} else {
-		PipedCookies.logButton.innerHTML="Autoclick on";
-		window.autoClick = true;
-		window.clickInterval = setInterval(Game.ClickCookie, 0);
-	}*/
 	if (!PipedCookies.inMenu)
 	{
 		Game.UpdateMenu();
@@ -30,7 +20,7 @@ function clickme()
 		titleElement[0].innerHTML = "Piped Cookies";
 
 		for (var i = menuElement.childNodes.length - 1; i >= 0; i--) {
-			var element = menuElements.childNodes[i];
+			var element = menuElement.childNodes[i];
 			if (element.className != "close menuClose" && element.className != "section")
 			{
 				element.removeChild(element);
@@ -39,5 +29,19 @@ function clickme()
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
 		Game.ShowMenu();
+	}
+}
+
+function clickmeold()
+{
+	Game.ShowMenu();
+	if (window.autoClick == true) {
+		PipedCookies.logButton.innerHTML="Autoclick off";
+		window.autoClick = false;
+		clearInterval(window.clickInterval);
+	} else {
+		PipedCookies.logButton.innerHTML="Autoclick on";
+		window.autoClick = true;
+		window.clickInterval = setInterval(Game.ClickCookie, 0);
 	}
 }
