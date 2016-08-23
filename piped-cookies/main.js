@@ -9,13 +9,18 @@ function pcInit() {
 function clickme()
 {
 	console.log("Click log!");
-	var tmpfunc = Game.UpdateMenu;
-	Game.UpdateMenu = function() {};
 
-	var menuElement = document.getElementById("menu");
-	var titleElement = menuElement.getElementById("section");
+	if (!PipedCookies.inMenu)
+	{
+		PipedCookies.updateMenu = Game.UpdateMenu;
+		Game.UpdateMenu = function() {};
 
-	titleElement.innerHTML = "Piped Cookies";
+		var menuElement = document.getElementById("menu");
+		var titleElement = menuElement.getElementById("section");
 
-	Game.UpdateMenu = tmpfunc;
+		titleElement.innerHTML = "Piped Cookies";
+	} else {
+		Game.UpdateMenu = PipedCookies.updateMenu;
+		Game.ShowMenu();
+	}
 }
