@@ -25,13 +25,13 @@ function clickme()
 		PipedCookies.updateMenu = Game.UpdateMenu;
 		Game.UpdateMenu = function() {};
 		
-		var interval = setInterval(function() 
-		{
+		//var interval = setInterval(function() 
+		//{
 			var menuElement = document.getElementById("menu");
 			var titleElement = document.getElementsByClassName("section");
 			titleElement[0].innerHTML = "Piped Cookies";
-			clearInterval(interval);
-		}, 500);
+		//	clearInterval(interval);
+		//}, 500);
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
 		Game.ShowMenu();
