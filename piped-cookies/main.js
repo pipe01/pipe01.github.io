@@ -9,7 +9,7 @@ function pcInit() {
 function clickme()
 {
 	console.log("Click log!");
-	Game.ShowMenu();
+	/*Game.ShowMenu();
 	if (window.autoClick == true) {
 		PipedCookies.logButton.innerHTML="Autoclick off";
 		window.autoClick = false;
@@ -18,5 +18,18 @@ function clickme()
 		PipedCookies.logButton.innerHTML="Autoclick on";
 		window.autoClick = true;
 		window.clickInterval = setInterval(Game.ClickCookie, 0);
+	}*/
+	if (!PipedCookies.inMenu)
+	{
+		PipedCookies.updateMenu = Game.UpdateMenu;
+		Game.UpdateMenu = function() {};
+
+		var menuElement = document.getElementById("menu");
+		var titleElement = menuElement.getElementById("section");
+
+		titleElement.innerHTML = "Piped Cookies";
+	} else {
+		Game.UpdateMenu = PipedCookies.updateMenu;
+		Game.ShowMenu();
 	}
 }
