@@ -1,7 +1,7 @@
 function pcInit() {
-		var element = document.getElementById("logButton");
-	element.innerHTML="Toggle autoclick";
-	element.onclick=clickme;
+	PipedCookies.logButton = document.getElementById("logButton");
+	PipedCookies.logButton.innerHTML="Autoclick off";
+	PipedCookies.logButton.onclick=clickme;
 }
 
 function clickme()
@@ -9,9 +9,11 @@ function clickme()
 	console.log("Click log!");
 	Game.ShowMenu();
 	if (window.autoClick == true) {
+		PipedCookies.logButton.innerHTML="Autoclick on";
 		window.autoClick = false;
 		clearInterval(window.clickInterval);
 	} else {
+		PipedCookies.logButton.innerHTML="Autoclick off";
 		window.autoClick = true;
 		window.clickInterval = setInterval(Game.ClickCookie, 0);
 	}
