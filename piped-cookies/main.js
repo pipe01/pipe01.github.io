@@ -25,7 +25,7 @@ function clickme()
 		Game.UpdateMenu = function() {};
 
 		var menuElement = document.getElementById("menu");
-		var titleElement = menuElement.getElementById("section");
+		var titleElement = document.getElementById("section");
 
 		titleElement.innerHTML = "Piped Cookies";
 	} else {
