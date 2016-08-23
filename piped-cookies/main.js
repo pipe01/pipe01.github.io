@@ -6,11 +6,14 @@ function apply()
 }
 
 function pcInit() {
-  var jquery = document.createElement('script');
-  jquery.setAttribute('type', 'text/javascript');
-  jquery.setAttribute('src', 'https://code.jquery.com/jquery-3.1.0.min.js');
-  jquery.onload = function() {apply();};
-  document.head.appendChild(jquery);
+	window.loadInterval = setInterval(function()
+	{
+		if (Game && Game.isReady)
+		{
+			clearInterval(window.loadInterval);
+			apply();
+		}
+	}, 1000);
 }
 
 function clickme()
@@ -25,12 +28,3 @@ function clickme()
 		window.clickInterval = setInterval(Game.ClickCookie, 0);
 	}
 }
-
-window.loadInterval = setInterval(function()
-{
-	if (Game && Game.isReady)
-	{
-		clearInterval(window.loadInterval);
-		pcInit();
-	}
-}, 1000);
