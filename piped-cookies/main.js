@@ -1,19 +1,7 @@
-function apply()
-{ 
-	var element = document.getElementById("logButton");
+function pcInit() {
+		var element = document.getElementById("logButton");
 	element.innerHTML="Toggle autoclick";
 	element.onclick=clickme;
-}
-
-function pcInit() {
-	window.loadInterval = setInterval(function()
-	{
-		if (Game && Game.isReady)
-		{
-			clearInterval(window.loadInterval);
-			apply();
-		}
-	}, 1000);
 }
 
 function clickme()
