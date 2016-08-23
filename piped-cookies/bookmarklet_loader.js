@@ -7,6 +7,6 @@ javascript:{
     var jquery = document.createElement('script');
   	jquery.setAttribute('type', 'text/javascript');
   	jquery.setAttribute('src', 'https://code.jquery.com/jquery-3.1.0.min.js');
-  	jquery.onload = function() {pcInit();};
+  	jquery.onload = function() { var interval = setInterval(function() { clearInterval(interval); pcInit(); }, 12) };
 	document.head.appendChild(jquery);
 }
