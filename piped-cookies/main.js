@@ -21,6 +21,7 @@ function clickme()
 	}*/
 	if (!PipedCookies.inMenu)
 	{
+		Game.UpdateMenu();
 		PipedCookies.updateMenu = Game.UpdateMenu;
 		Game.UpdateMenu = function() {};
 
