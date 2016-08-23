@@ -23,7 +23,7 @@ function clickme()
 			var element = menuElement.childNodes[i];
 			if (element.className != "close menuClose" && element.className != "section")
 			{
-				element.removeChild(element);
+				menuElement.removeChild(element);
 			}
 		}
 	} else {
