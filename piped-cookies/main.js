@@ -30,6 +30,7 @@ function clickme()
 			var menuElement = document.getElementById("menu");
 			var titleElement = document.getElementsByClassName("section");
 			titleElement[0].innerHTML = "Piped Cookies";
+			clearInterval(interval);
 		}, 500);
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
