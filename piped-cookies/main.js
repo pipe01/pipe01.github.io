@@ -11,11 +11,11 @@ function clickme()
 	console.log("Click log!");
 	Game.ShowMenu();
 	if (window.autoClick == true) {
-		PipedCookies.logButton.innerHTML="Autoclick on";
+		PipedCookies.logButton.innerHTML="Autoclick off";
 		window.autoClick = false;
 		clearInterval(window.clickInterval);
 	} else {
-		PipedCookies.logButton.innerHTML="Autoclick off";
+		PipedCookies.logButton.innerHTML="Autoclick on";
 		window.autoClick = true;
 		window.clickInterval = setInterval(Game.ClickCookie, 0);
 	}
