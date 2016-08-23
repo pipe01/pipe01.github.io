@@ -5,6 +5,14 @@ function apply()
 	element.onclick=clickme;
 }
 
+function pcInit() {
+  var jquery = document.createElement('script');
+  jquery.setAttribute('type', 'text/javascript');
+  jquery.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+  jquery.onload = function() {apply();};
+  document.head.appendChild(jquery);
+}
+
 function clickme()
 {
 	console.log("Click log!");
@@ -23,6 +31,6 @@ window.loadInterval = setInterval(function()
 	if (Game && Game.isReady)
 	{
 		clearInterval(window.loadInterval);
-		apply();
+		pcInit();
 	}
 }, 1000);
