@@ -21,13 +21,16 @@ function clickme()
 	}*/
 	if (!PipedCookies.inMenu)
 	{
+		Game.UpdateMenu();
 		PipedCookies.updateMenu = Game.UpdateMenu;
 		Game.UpdateMenu = function() {};
-
-		var menuElement = document.getElementById("menu");
-		var titleElement = document.getElementByClassName("section");
-
-		titleElement[0].innerHTML = "Piped Cookies";
+		
+		var interval = setInterval(function() 
+		{
+			var menuElement = document.getElementById("menu");
+			var titleElement = document.getElementById("section");
+			titleElement.innerHTML = "Piped Cookies";
+		}, 500);
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
 		Game.ShowMenu();
