@@ -28,7 +28,7 @@ function clickme()
 		var interval = setInterval(function() 
 		{
 			var menuElement = document.getElementById("menu");
-			var titleElement = document.getElementById("section");
+			var titleElement = document.getElementByClassName("section");
 			titleElement.innerHTML = "Piped Cookies";
 		}, 500);
 	} else {
