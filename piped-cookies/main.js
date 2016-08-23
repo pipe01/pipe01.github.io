@@ -21,7 +21,7 @@ function clickme()
 
 		for (var i = menuElement.childNodes.length - 1; i >= 0; i--) {
 			var element = menuElement.childNodes[i];
-			if (element.className != "close menuClose" && element.className != "section")
+			if (element.className != "section")
 			{
 				menuElement.removeChild(element);
 			}
