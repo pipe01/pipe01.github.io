@@ -17,3 +17,12 @@ function clickme()
 		window.clickInterval = setInterval(Game.ClickCookie, 0);
 	}
 }
+
+window.loadInterval = setInterval(function()
+{
+	if (Game && Game.isReady)
+	{
+		clearInterval(window.loadInterval);
+		apply();
+	}
+}, 1000);
