@@ -8,7 +8,7 @@ function apply()
 function pcInit() {
   var jquery = document.createElement('script');
   jquery.setAttribute('type', 'text/javascript');
-  jquery.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+  jquery.setAttribute('src', 'https://code.jquery.com/jquery-3.1.0.min.js');
   jquery.onload = function() {apply();};
   document.head.appendChild(jquery);
 }
