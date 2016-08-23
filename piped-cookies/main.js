@@ -29,7 +29,7 @@ function clickme()
 		{
 			var menuElement = document.getElementById("menu");
 			var titleElement = document.getElementsByClassName("section");
-			titleElement.innerHTML = "Piped Cookies";
+			titleElement[0].innerHTML = "Piped Cookies";
 		}, 500);
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
