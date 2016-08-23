@@ -24,14 +24,18 @@ function clickme()
 		Game.UpdateMenu();
 		PipedCookies.updateMenu = Game.UpdateMenu;
 		Game.UpdateMenu = function() {};
-		
-		//var interval = setInterval(function() 
-		//{
-			var menuElement = document.getElementById("menu");
-			var titleElement = document.getElementsByClassName("section");
-			titleElement[0].innerHTML = "Piped Cookies";
-		//	clearInterval(interval);
-		//}, 500);
+
+		var menuElement = document.getElementById("menu");
+		var titleElement = document.getElementsByClassName("section");
+		titleElement[0].innerHTML = "Piped Cookies";
+
+		for (var i = menuElement.childNodes.length - 1; i >= 0; i--) {
+			var element = menuElements.childNodes[i];
+			if (element.className != "close menuClose" && element.className != "section")
+			{
+				element.removeChild(element);
+			}
+		}
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
 		Game.ShowMenu();
