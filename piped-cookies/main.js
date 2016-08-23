@@ -1,3 +1,5 @@
+var PipedCookies = { }
+
 function pcInit() {
 	PipedCookies.logButton = document.getElementById("logButton");
 	PipedCookies.logButton.innerHTML="Autoclick off";
