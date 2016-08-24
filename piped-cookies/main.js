@@ -3,7 +3,7 @@ var PipedCookies = { }
 function pcInit() {
 	PipedCookies.logButton = document.getElementById("logButton");
 	PipedCookies.logButton.innerHTML="Autoclick off";
-	PipedCookies.logButton.onclick=clickmeold;
+	PipedCookies.logButton.onclick=clickme;
 }
 
 function clickme()
