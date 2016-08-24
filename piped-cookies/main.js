@@ -42,7 +42,7 @@ function pcMenu()
 		return Game.oldUpdateMenu();
 	}
 	clearMenu();
-	Game.updateMenu = function()
+	Game.UpdateMenu = function()
 	{
 		var menu = document.getElementById("menu");
 		var title = document.createElement("div");
