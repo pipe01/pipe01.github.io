@@ -41,12 +41,19 @@ function clickme()
 	}*/
 }
 
+function pcMenuClose()
+{
+
+}
+
 function pcMenu()
 {
 	if (Game.onMenu != "pcCookies")
 	{
+		console.log("don't override!");
 		return Game.oldUpdateMenu();
 	}
+	console.log("override!");
 	clearMenu();
 	Game.UpdateMenu = function()
 	{
