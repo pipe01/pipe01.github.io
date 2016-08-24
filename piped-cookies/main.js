@@ -60,7 +60,7 @@ function pcMenu()
 		var subsection = document.createElement("div");
 		subsection.setAttribute("class", "subsection");
 		menu.appendChild(subsection);
-		addListing(subsection, "hola", "como estas?", "test");
+		addListing(subsection, "hola", "como estas?", "test()");
 		
 	}
 	console.log("menu :D");
@@ -80,15 +80,18 @@ function addListing(subsection, text, desc, onclick)
 	html += "</a>";
 	html += "<label>" + desc + "</desc>";*/
 	
-	var element = document.createElement("a");
-	element.setAttribute("class", "option");
-	element.setAttribute("onclick", onclick);
-	element.innerHTML = text;
-	subsection.appendChild(element);
+	var listing = document.createElement("listing");
+	subsection.appendChild(listing);
 	
-	var element1 = document.createElement("label");
-	element1.innerHTML = desc;
-	subsection.appendChild(element1);
+	var aelement = document.createElement("a");
+	aelement.setAttribute("class", "option");
+	aelement.setAttribute("onclick", onclick);
+	aelement.innerHTML = text;
+	listing.appendChild(aelement);
+	
+	var labelelement = document.createElement("label");
+	labelelement.innerHTML = desc;
+	listing.appendChild(labelelement);
 }
 
 function clearMenu()
