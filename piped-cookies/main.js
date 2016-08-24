@@ -57,7 +57,7 @@ function pcMenu()
 		title.innerHTML = "Piped Cookies";
 		menu.appendChild(title);
 		
-		var subsection = document.createElement("dic");
+		var subsection = document.createElement("div");
 		subsection.setAttribute("class", "subsection");
 		addListing(subsection, "hola", "como estas?", "test");
 		
@@ -78,6 +78,8 @@ function addListing(subsection, text, desc, onclick)
 	html += text;
 	html += "</a>";
 	html += "<label>" + desc + "</desc>";
+	
+	//var element = document.createElement()
 }
 
 function clearMenu()
