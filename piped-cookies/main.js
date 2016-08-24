@@ -11,6 +11,7 @@ function clickme()
 	console.log("Click log!");
 	if (Game.onMenu != "pcCookies")
 	{
+		PipedCookies.menu = 
 		Game.onMenu = "pcCookies";
 		Game.oldUpdateMenu = Game.UpdateMenu;
 		pcMenu();	
@@ -50,17 +51,19 @@ function pcMenu()
 	Game.UpdateMenu = function()
 	{
 		clearMenu();
-		var menu = document.getElementById("menu");
-		
+		PipedCookies.menu = document.getElementById("menu");
+
 		var title = document.createElement("div");
 		title.setAttribute("class", "section");
 		title.innerHTML = "Piped Cookies";
-		menu.appendChild(title);
+		PipedCookies.menu.appendChild(title);
 		
+		addTitleSection("Testing");
+
 		var subsection = document.createElement("div");
 		subsection.setAttribute("class", "subsection");
-		menu.appendChild(subsection);
-		addListing(subsection, "hola", "como estas?", "test()");
+		PipedCookies.menu.appendChild(subsection);
+		addListingButton(subsection, "hola", "como estas?", "test()");
 		
 	}
 	console.log("menu :D");
@@ -71,15 +74,16 @@ function test()
 	console.log("Sdfhdfh");
 }
 
-function addListing(subsection, text, desc, onclick)
+function addTitleSection(text)
 {
-	/*var html = subsection.innerHTML;
-	html += "<div class='listing'>"
-	html += "<a class='option' onclick='" + onclick + "'>"
-	html += text;
-	html += "</a>";
-	html += "<label>" + desc + "</desc>";*/
-	
+	var section = document.createElement("div");
+	section.setAttribute("class", "section");
+	section.innerHTML = text;
+	PipedCookies.menu.appendChild(section);
+}
+
+function addListingButton(subsection, text, desc, onclick)
+{
 	var listing = document.createElement("listing");
 	subsection.appendChild(listing);
 	
