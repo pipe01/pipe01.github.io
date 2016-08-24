@@ -9,7 +9,10 @@ function pcInit() {
 function clickme()
 {
 	console.log("Click log!");
-	if (!PipedCookies.inMenu)
+	Game.onMenu = "pcCookies";
+	Game.oldUpdateMenu = Game.UpdateMenu;
+	pcMenu();
+	/*if (!PipedCookies.inMenu)
 	{
 		Game.UpdateMenu();
 		PipedCookies.updateMenu = Game.UpdateMenu;
@@ -29,7 +32,16 @@ function clickme()
 	} else {
 		Game.UpdateMenu = PipedCookies.updateMenu;
 		Game.ShowMenu();
+	}*/
+}
+
+function pcMenu()
+{
+	if (Game.onMenu != "pcCookies")
+	{
+		return Game.oldUpdateMenu();
 	}
+	console.log("menu :D");
 }
 
 function clickmeold()
