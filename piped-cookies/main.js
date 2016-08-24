@@ -59,6 +59,7 @@ function pcMenu()
 		
 		var subsection = document.createElement("div");
 		subsection.setAttribute("class", "subsection");
+		menu.appendChild(subsection);
 		addListing(subsection, "hola", "como estas?", "test");
 		
 	}
