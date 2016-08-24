@@ -77,7 +77,7 @@ function test()
 function addTitleSection(text)
 {
 	var section = document.createElement("div");
-	section.setAttribute("class", "section");
+	section.setAttribute("class", "title");
 	section.innerHTML = text;
 	PipedCookies.menu.appendChild(section);
 }
