@@ -9,9 +9,14 @@ function pcInit() {
 function clickme()
 {
 	console.log("Click log!");
-	Game.onMenu = "pcCookies";
-	Game.oldUpdateMenu = Game.UpdateMenu;
-	pcMenu();
+	if (Game.onMenu != "pcCookies")
+	{
+		Game.onMenu = "pcCookies";
+		Game.oldUpdateMenu = Game.UpdateMenu;
+		pcMenu();	
+	} else if (Game.onMenu == "pcCookies") {
+		Game.onMenu = "";
+	}
 	/*if (!PipedCookies.inMenu)
 	{
 		Game.UpdateMenu();
@@ -44,13 +49,35 @@ function pcMenu()
 	clearMenu();
 	Game.UpdateMenu = function()
 	{
+		clearMenu();
 		var menu = document.getElementById("menu");
+		
 		var title = document.createElement("div");
 		title.setAttribute("class", "section");
 		title.innerHTML = "Piped Cookies";
 		menu.appendChild(title);
+		
+		var subsection = document.createElement("dic");
+		subsection.setAttribute("class", "subsection");
+		addListing(subsection, "hola", "como estas?", "test");
+		
 	}
 	console.log("menu :D");
+}
+
+function test()
+{
+	console.log("Sdfhdfh");
+}
+
+function addListing(subsection, text, desc, onclick)
+{
+	var html = subsection.innerHTML;
+	html += "<div class='listing'>"
+	html += "<a class='option' onclick='" + onclick + "'>"
+	html += text;
+	html += "</a>";
+	html += "<label>" + desc + "</desc>";
 }
 
 function clearMenu()
