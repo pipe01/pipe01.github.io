@@ -51,8 +51,9 @@ function pcMenu()
 
 function clearMenu()
 {
-	for (var i = menuElement.childNodes.length - 1; i >= 0; i--) {
-		menuElement.removeChild(menuElement.childNodes[i]);
+	var menu = document.getElementById("menu");
+	for (var i = menu.childNodes.length - 1; i >= 0; i--) {
+		menu.removeChild(menu.childNodes[i]);
 	}
 }
 
