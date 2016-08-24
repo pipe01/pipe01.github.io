@@ -72,14 +72,22 @@ function test()
 
 function addListing(subsection, text, desc, onclick)
 {
-	var html = subsection.innerHTML;
+	/*var html = subsection.innerHTML;
 	html += "<div class='listing'>"
 	html += "<a class='option' onclick='" + onclick + "'>"
 	html += text;
 	html += "</a>";
-	html += "<label>" + desc + "</desc>";
+	html += "<label>" + desc + "</desc>";*/
 	
-	//var element = document.createElement()
+	var element = document.createElement("a");
+	element.setAttribute("class", "option");
+	element.setAttribute("onclick", onclick);
+	element.innerHTML = text;
+	subsection.appendChild(element);
+	
+	var element1 = document.createElement("label");
+	element1.innerHTML = desc;
+	subsection.appendChild(element1);
 }
 
 function clearMenu()
