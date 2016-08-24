@@ -13,7 +13,7 @@ function clickme()
 	{
 		Game.UpdateMenu();
 		PipedCookies.updateMenu = Game.UpdateMenu;
-		Game.UpdateMenu = function() {};
+		Game.UpdateMenu = function() {console.log("update");};
 
 		var menuElement = document.getElementById("menu");
 		var titleElement = document.getElementsByClassName("section");
