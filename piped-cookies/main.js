@@ -41,7 +41,19 @@ function pcMenu()
 	{
 		return Game.oldUpdateMenu();
 	}
+	clearMenu();
+	Game.updateMenu = function()
+	{
+		var menu = document.getElementById("menu");
+	}
 	console.log("menu :D");
+}
+
+function clearMenu()
+{
+	for (var i = menuElement.childNodes.length - 1; i >= 0; i--) {
+		menuElement.removeChild(menuElement.childNodes[i]);
+	}
 }
 
 function clickmeold()
