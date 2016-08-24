@@ -53,6 +53,14 @@ function pcMenu()
 		clearMenu();
 		PipedCookies.menu = document.getElementById("menu");
 
+		//<div class="close menuClose" onclick="Game.ShowMenu();">x</div>
+
+		var close = document.createElement("div");
+		close.setAttribute("class", "close menuClose");
+		close.setAttribute("onclick", "Game.ShowMenu();");
+		close.innerHTML = "x";
+		PipedCookies.menu.appendChild(close);
+
 		var title = document.createElement("div");
 		title.setAttribute("class", "section");
 		title.innerHTML = "Piped Cookies";
