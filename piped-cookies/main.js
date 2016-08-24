@@ -45,6 +45,10 @@ function pcMenu()
 	Game.updateMenu = function()
 	{
 		var menu = document.getElementById("menu");
+		var title = document.createElement("div");
+		title.setAttribute("class", "section");
+		title.innerHTML = "Piped Cookies";
+		menu.appendChild(title);
 	}
 	console.log("menu :D");
 }
